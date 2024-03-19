@@ -12,9 +12,17 @@ import {
 declare module '@mui/material/styles' {
   interface Palette {
     angry: Palette['primary'];
+    sad: Palette['primary'];
+    flat: Palette['primary'];
+    okay: Palette['primary'];
+    good: Palette['primary'];
   }
   interface PaletteOptions {
     angry: PaletteOptions['primary'];
+    sad: PaletteOptions['primary'];
+    flat: PaletteOptions['primary'];
+    okay: PaletteOptions['primary'];
+    good: PaletteOptions['primary'];
   }
 }
 
@@ -32,6 +40,18 @@ let theme = createTheme({
     },
     angry: {
       main: alpha('#F89595', 0.44),
+    },
+    sad: {
+      main: alpha('#F895EE', 0.44),
+    },
+    flat: {
+      main: alpha('#9599F8', 0.44),
+    },
+    okay: {
+      main: alpha('#95F8EC', 0.44),
+    },
+    good: {
+      main: alpha('#A3F895', 0.44),
     },
   },
 });

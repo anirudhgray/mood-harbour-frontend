@@ -11,7 +11,9 @@ export default function Quote() {
       console.log(response.data[0].q);
       setQuote(response.data[0].quote);
     } catch {
-      setQuote('Test quote here:) All is well.');
+      setQuote(
+        'Waste no more time arguing about what a good man should be. Be one.'
+      );
     }
   };
   useEffect(() => {
@@ -43,7 +45,7 @@ export default function Quote() {
       >
         <Typography variant="body1">{currDate.toUTCString()}</Typography>
       </Box>
-      <Typography color={'white'} variant="body1">
+      <Typography color={'white'} textAlign={'center'} variant="body1">
         {quote}
       </Typography>
     </Box>
