@@ -11,6 +11,7 @@ import { RocketLaunch } from '@mui/icons-material';
 import LoginImage from '../assets/huggingface.svg';
 import RegisterImage from '../assets/stareyes.svg';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 const FeatureList = styled('ul')`
   list-style-type: none;
@@ -78,42 +79,46 @@ const HomePage = () => {
           mt={4}
           mb={4}
         >
-          <Button
-            variant="contained"
-            color="primary"
-            fullWidth
-            sx={{
-              height: '100%',
-              aspectRatio: '1/1',
-              mb: { xs: 2, md: 0 },
-              mr: { md: 2 },
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1rem',
-            }}
-          >
-            <img className="w-32" src={LoginImage} alt="Login" />
-            <Typography fontWeight={700} color="white" variant="body1">
-              Login
-            </Typography>
-          </Button>
-          <Button
-            variant="contained"
-            color="secondary"
-            fullWidth
-            sx={{
-              height: '100%',
-              aspectRatio: '1/1',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1rem',
-            }}
-          >
-            <img className="w-32" src={RegisterImage} alt="Register" />
-            <Typography fontWeight={700} color={'white'} variant="body1">
-              Register
-            </Typography>
-          </Button>
+          <Link to="/login">
+            <Button
+              variant="contained"
+              color="primary"
+              fullWidth
+              sx={{
+                height: '100%',
+                aspectRatio: '1/1',
+                mb: { xs: 2, md: 0 },
+                mr: { md: 2 },
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+              }}
+            >
+              <img className="w-32" src={LoginImage} alt="Login" />
+              <Typography fontWeight={700} color="white" variant="body1">
+                Login
+              </Typography>
+            </Button>
+          </Link>
+          <Link to="/register">
+            <Button
+              variant="contained"
+              color="secondary"
+              fullWidth
+              sx={{
+                height: '100%',
+                aspectRatio: '1/1',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+              }}
+            >
+              <img className="w-32" src={RegisterImage} alt="Register" />
+              <Typography fontWeight={700} color={'white'} variant="body1">
+                Register
+              </Typography>
+            </Button>
+          </Link>
         </Box>
       </Container>
       <Footer />
