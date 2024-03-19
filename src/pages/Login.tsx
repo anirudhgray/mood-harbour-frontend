@@ -8,7 +8,7 @@ import {
   CircularProgress,
 } from '@mui/material';
 import LoginImage from '../assets/huggingface.svg';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ArrowBackIosNew } from '@mui/icons-material';
 import axios from '../axios';
 import { toast } from 'react-toastify';
@@ -92,6 +92,10 @@ const LoginPage = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          {/* forgot password? */}
+          <Link className="w-full block text-right my-3" to={'/forgot'}>
+            Forgot your password? No worries.
+          </Link>
           <Button
             type="submit"
             variant="contained"
