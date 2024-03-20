@@ -1,5 +1,7 @@
 import { SpeedDial, SpeedDialAction, SpeedDialIcon } from '@mui/material';
 import { Add, Edit, ExitToApp, Minimize } from '@mui/icons-material';
+import { useState } from 'react';
+import NewMoodModal from './newMoodModal/NewMoodModal';
 
 const actions = [
   { icon: <Edit />, name: 'Content' },
@@ -15,20 +17,30 @@ const actions = [
 ];
 
 export default function Menu() {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  actions[1].onclick = handleOpen;
+
   return (
-    <SpeedDial
-      ariaLabel="SpeedDial openIcon example"
-      sx={{ position: 'absolute', bottom: 16, right: 16 }}
-      icon={<SpeedDialIcon openIcon={<Minimize />} />}
-    >
-      {actions.map((action: any) => (
-        <SpeedDialAction
-          key={action.name}
-          icon={action.icon}
-          tooltipTitle={action.name}
-          onClick={action.onclick ? action.onclick : () => {}}
-        />
-      ))}
-    </SpeedDial>
+    <>
+      <SpeedDial
+        ariaLabel="SpeedDial openIcon example"
+        sx={{ position: 'absolute', bottom: 16, right: 16 }}
+        icon={<SpeedDialIcon openIcon={<Minimize />} />}
+      >
+        {actions.map((action: any) => (
+          <SpeedDialAction
+            key={action.name}
+            icon={action.icon}
+            tooltipTitle={action.name}
+            onClick={action.onclick ? action.onclick : () => {}}
+          />
+        ))}
+      </SpeedDial>
+      <NewMoodModal open={open} handleClose={handleClose} />
+    </>
   );
 }
