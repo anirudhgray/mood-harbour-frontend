@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import GuardedRoute from './components/GuardRoute';
 import ForgotPage from './pages/Forgot';
 import Face from './pages/Face';
+import Resources from './pages/Resources';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path="/face" element={<GuardedRoute />}>
           <Route path="/face" element={<Face />} />
+        </Route>
+        <Route path="/resources" element={<GuardedRoute />}>
+          <Route path="/resources" element={<Resources />} />
         </Route>
       </Routes>
       <ToastContainer theme="colored" position="bottom-right" />

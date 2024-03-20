@@ -6,13 +6,15 @@ import {
   Face,
   Home,
   Minimize,
+  TextSnippet,
 } from '@mui/icons-material';
 import { useState } from 'react';
 import NewMoodModal from './newMoodModal/NewMoodModal';
 import { useNavigate } from 'react-router-dom';
 
 const actions = [
-  { icon: <Edit />, name: 'Content' },
+  { icon: <TextSnippet />, name: 'Content' },
+  { icon: <Edit />, name: 'Add Resource' },
   { icon: <Add />, name: 'New Mood' },
   {
     icon: <ExitToApp />,
@@ -40,9 +42,10 @@ export default function Menu() {
 
   const navigate = useNavigate();
 
-  actions[1].onclick = handleOpen;
+  actions[0].onclick = () => navigate('/resources');
+  actions[2].onclick = handleOpen;
   actions[3].onclick = () => navigate('/face');
-  actions[4].onclick = () => navigate('/dashboard');
+  actions[5].onclick = () => navigate('/dashboard');
 
   return (
     <>
