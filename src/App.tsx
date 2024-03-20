@@ -7,6 +7,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import GuardedRoute from './components/GuardRoute';
 import ForgotPage from './pages/Forgot';
+import Face from './pages/Face';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         <Route path="/forgot" element={<ForgotPage />} />
         <Route path="/dashboard" element={<GuardedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
+        </Route>
+        <Route path="/face" element={<GuardedRoute />}>
+          <Route path="/face" element={<Face />} />
         </Route>
       </Routes>
       <ToastContainer theme="colored" position="bottom-right" />

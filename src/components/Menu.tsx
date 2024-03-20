@@ -1,7 +1,15 @@
 import { SpeedDial, SpeedDialAction, SpeedDialIcon } from '@mui/material';
-import { Add, Edit, ExitToApp, Minimize } from '@mui/icons-material';
+import {
+  Add,
+  Edit,
+  ExitToApp,
+  Face,
+  Home,
+  Minimize,
+} from '@mui/icons-material';
 import { useState } from 'react';
 import NewMoodModal from './newMoodModal/NewMoodModal';
+import { useNavigate } from 'react-router-dom';
 
 const actions = [
   { icon: <Edit />, name: 'Content' },
@@ -14,6 +22,14 @@ const actions = [
       window.location.reload();
     },
   },
+  {
+    icon: <Face />,
+    name: 'Face Analysis',
+  },
+  {
+    icon: <Home />,
+    name: 'Home',
+  },
 ];
 
 export default function Menu() {
@@ -22,7 +38,11 @@ export default function Menu() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const navigate = useNavigate();
+
   actions[1].onclick = handleOpen;
+  actions[3].onclick = () => navigate('/face');
+  actions[4].onclick = () => navigate('/dashboard');
 
   return (
     <>
