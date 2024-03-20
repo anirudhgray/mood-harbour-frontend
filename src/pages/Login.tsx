@@ -81,6 +81,7 @@ const LoginPage = () => {
             fullWidth
             margin="normal"
             value={email}
+            id='email'
             onChange={(e) => setEmail(e.target.value)}
           />
           <TextField
@@ -90,6 +91,7 @@ const LoginPage = () => {
             fullWidth
             margin="normal"
             value={password}
+            id='password'
             onChange={(e) => setPassword(e.target.value)}
           />
           {/* forgot password? */}

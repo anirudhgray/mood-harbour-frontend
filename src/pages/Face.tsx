@@ -29,7 +29,7 @@ export default function Face() {
         display: 'flex',
         flexDirection: 'column',
         height: '100vh',
-        overflow: 'hidden',
+        // overflow: 'hidden',
       }}
     >
       <Menu />
@@ -40,7 +40,7 @@ export default function Face() {
           id="canvas"
           className="canvas"
           style={{
-            position: 'fixed',
+            position: 'absolute',
             top: '0',
             left: '0',
             zIndex: 10,

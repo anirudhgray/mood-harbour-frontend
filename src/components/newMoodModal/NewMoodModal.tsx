@@ -38,14 +38,6 @@ export default function NewMoodModal({
   };
 
   const handleSubmit = async () => {
-    // axios to /mood/create
-    // with var moodData struct {
-    // 	MoodType   models.MoodType `json:"mood_type"`
-    // 	Notes      string          `json:"notes"`
-    // 	Attributes []string        `json:"attributes"`
-    // }
-    // with the mood, attributes, and notes
-    // then close the modal
     try {
       await axios.post(
         '/mood/create',
@@ -70,10 +62,6 @@ export default function NewMoodModal({
       toast.error(e.response.data.message);
     }
   };
-
-  if (step === 4) {
-    handleSubmit();
-  }
 
   return (
     <Modal
@@ -206,7 +194,10 @@ export default function NewMoodModal({
                 width: '100%',
               }}
               disabled={isNextDisabled()}
-              onClick={() => setStep(step + 1)}
+              onClick={() => {
+                if (step === 3) handleSubmit();
+                setStep(step + 1);
+              }}
             >
               Continue
             </Button>
