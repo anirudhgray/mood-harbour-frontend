@@ -17,6 +17,7 @@ import Menu from '../components/Menu';
 import { toast } from 'react-toastify';
 import { Close, HelpOutline } from '@mui/icons-material';
 import ResDesc from '../components/RecDesc';
+import ResourceModal from '../components/ResourceModal';
 
 type Resource = {
   CreatedAt: number;
@@ -35,7 +36,7 @@ type Review = {
   ResourceID: number;
 };
 
-type ResourceResObject = {
+export type ResourceResObject = {
   id: string;
   resource: Resource;
   reviews: Review[];
@@ -53,6 +54,8 @@ export default function Resources() {
   );
   const [loading, setLoading] = useState(false);
   const [tab, setTab] = useState(0);
+  const [selectedResource, setSelectedResource] =
+    useState<ResourceResObject | null>(null);
 
   const getResources = async () => {
     setLoading(true);
@@ -120,6 +123,11 @@ export default function Resources() {
     >
       <Menu />
       <Greeting />
+      <ResourceModal
+        open={!!selectedResource}
+        handleClose={() => setSelectedResource(null)}
+        resource={selectedResource}
+      />
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Tabs value={tab} onChange={handleTabChange}>
           <Tab label="Resources" />
@@ -194,6 +202,7 @@ export default function Resources() {
               p={2}
               borderRadius={10}
               bgcolor={'background.paper'}
+              onClick={() => setSelectedResource(resource)}
             >
               <Typography variant="h5">{resource.resource.Title}</Typography>
               <Typography variant="body1">
