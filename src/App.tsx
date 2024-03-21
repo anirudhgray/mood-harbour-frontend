@@ -9,6 +9,7 @@ import GuardedRoute from './components/GuardRoute';
 import ForgotPage from './pages/Forgot';
 import Face from './pages/Face';
 import Resources from './pages/Resources';
+import VerifyAccount from './pages/VerifyAccount';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/verify" element={<VerifyAccount />} />
         <Route path="/forgot" element={<ForgotPage />} />
         <Route path="/dashboard" element={<GuardedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />

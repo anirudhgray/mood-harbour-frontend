@@ -44,7 +44,7 @@ export default function Menu() {
 
   actions[0].onclick = () => navigate('/resources');
   actions[2].onclick = handleOpen;
-  actions[3].onclick = () => navigate('/face');
+  actions[4].onclick = () => navigate('/face');
   actions[5].onclick = () => navigate('/dashboard');
 
   return (
