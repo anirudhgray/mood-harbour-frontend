@@ -34,7 +34,7 @@ export default function Dashboard() {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
       });
-      setMoods(res.data.reverse());
+      setMoods(res.data);
       setLoading(false);
     } catch (e: any) {
       console.error(e);

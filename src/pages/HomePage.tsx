@@ -57,19 +57,55 @@ const HomePage = () => {
           <FeatureItem>
             <FormControlLabel
               control={<Checkbox checked checkedIcon={<RocketLaunch />} />}
-              label="Feature 1"
+              label="Built using Golang, Gin, Gorm and PostgreSQL on the backend, and React+TypeScript on the frontend."
             />
           </FeatureItem>
           <FeatureItem>
             <FormControlLabel
               control={<Checkbox checked checkedIcon={<RocketLaunch />} />}
-              label="Feature 1"
+              label="Dockerised via docker-compose."
             />
           </FeatureItem>
           <FeatureItem>
             <FormControlLabel
               control={<Checkbox checked checkedIcon={<RocketLaunch />} />}
-              label="Feature 1"
+              label="Auth: Login, Register, Forgot Password, Reset Password, Delete Account"
+            />
+          </FeatureItem>
+          <FeatureItem>
+            <FormControlLabel
+              control={<Checkbox checked checkedIcon={<RocketLaunch />} />}
+              label="Mood Tracking Features: Add Mood Entries at any time, and see your mood history."
+            />
+          </FeatureItem>
+          <FeatureItem>
+            <FormControlLabel
+              control={<Checkbox checked checkedIcon={<RocketLaunch />} />}
+              label="Facial Expression Detection to detect your mood in real time."
+            />
+          </FeatureItem>
+          <FeatureItem>
+            <FormControlLabel
+              control={<Checkbox checked checkedIcon={<RocketLaunch />} />}
+              label="Publish helpful resources, and vote on resources present in the community."
+            />
+          </FeatureItem>
+          <FeatureItem>
+            <FormControlLabel
+              control={<Checkbox checked checkedIcon={<RocketLaunch />} />}
+              label="Get personalised recommendations via collaborative-filtering for mood related resources."
+            />
+          </FeatureItem>
+          <FeatureItem>
+            <FormControlLabel
+              control={<Checkbox checked checkedIcon={<RocketLaunch />} />}
+              label="Send mails for Auth related matters."
+            />
+          </FeatureItem>
+          <FeatureItem>
+            <FormControlLabel
+              control={<Checkbox checked checkedIcon={<RocketLaunch />} />}
+              label="Certain users can have admin access."
             />
           </FeatureItem>
         </FeatureList>
